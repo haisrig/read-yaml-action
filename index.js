@@ -21,9 +21,9 @@ function run() {
     core.setOutput("build_type", repoConfig.build_type);
     core.setOutput("static_code_analysis", repoConfig.static_code_analysis);
     core.setOutput("build", branchConfig.build.toString());
-    core.setOutput("unit_test", branchConfig.unit_tests.toString());
-    core.setOutput("code_analysis", branchConfig.code_analysis.toString());
-    core.setOutput("store_artifact", branchConfig.store_artifact.toString());
+    core.setOutput("unit_test", branchConfig.unit_tests ? branchConfig.unit_tests.toString() : "false");
+    core.setOutput("code_analysis", branchConfig.code_analysis ? branchConfig.code_analysis.toString() : "false");
+    core.setOutput("store_artifact", branchConfig.store_artifact ? branchConfig.store_artifact.toString() : "false");
 }
 
 run()
